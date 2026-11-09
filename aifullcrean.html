@@ -1,0 +1,195 @@
+<Head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: "Fira Sans", sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 0.2fr 1.9fr 0.1fr 5.7fr 0.1fr 5.7fr 0.1fr 5.7fr 0.7fr 0.1fr;
+      grid-template-rows: 0.2fr 0.8fr 0.3fr 0.9fr 0.2fr 2.5fr 0.2fr 2.5fr 1.9fr;
+      grid-auto-flow: row;
+
+      grid-template-areas:
+        "D11 D9 D9 D9 D9 D9 D9 D9 D5 D5"
+        "D11 logo D10 Title Title Title Title Title D5 D5"
+        "D11 D2 D3 D3 D3 D3 D3 D3 D5 D5"
+        "D11 D2 littleDes littleDes littleDes littleDes littleDes littleDes D5 D5"
+        "D11 D2 D4 D4 D4 D4 D4 D4 D5 D5"
+        "D11 D2 AboutUs AboutUs D12 AboutOurT D13 QANDC D5 D5"
+        "D11 D1 D1 D1 D1 D6 D6 D6 D5 D5"
+        "D11 D1 D1 D1 D1 SignUp D7 D7 D5 D5"
+        "D11 D1 D1 D1 D1 D8 D7 D7 D5 D5";
+
+      width: 100vw;
+      height: 100vh;
+
+      background-image: url("images/office_with_people.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .fullscreen-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      padding: 12px 20px;
+      background: #172222;
+      color: white;
+      border: 2px solid white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .fullscreen-btn:hover {
+      background: #344444;
+    }
+
+    .AboutOurT,
+    .QANDC,
+    .SignUp,
+    .AboutUs {
+      background: #172222;
+      border: 8px solid rgb(19, 22, 22);
+      font-size: 4rem;
+      color: white;
+    }
+
+    .AboutOurT { grid-area: AboutOurT; }
+    .QANDC { grid-area: QANDC; }
+    .SignUp { grid-area: SignUp; }
+    .AboutUs { grid-area: AboutUs; }
+
+    .logo { grid-area: logo; }
+
+    .Title {
+      grid-area: Title;
+      text-align: center;
+      font-size: 4rem;
+      color: black;
+    }
+
+    .fira-sans-regular {
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    a:link, a:visited, a:hover, a:active {
+      color: white;
+      text-decoration: none;
+    }
+
+    .D1 { grid-area: D1; }
+    .D2 { grid-area: D2; }
+    .littleDes { grid-area: littleDes; }
+    .D5 { grid-area: D5; }
+    .D3 { grid-area: D3; }
+    .D4 { grid-area: D4; }
+    .D6 { grid-area: D6; }
+    .D7 { grid-area: D7; }
+    .D8 { grid-area: D8; }
+    .D9 { grid-area: D9; }
+    .D10 { grid-area: D10; }
+    .D11 { grid-area: D11; }
+    .D12 { grid-area: D12; }
+    .D13 { grid-area: D13; }
+
+    @media (max-width: 1200px) {
+      .AboutUs,
+      .AboutOurT,
+      .QANDC,
+      .SignUp {
+        font-size: 2rem;
+      }
+
+      .Title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</Head>
+
+<body>
+
+  <button class="fullscreen-btn" onclick="toggleFullscreen()">
+    Go Fullscreen
+  </button>
+
+  <div class="container">
+    <div class="AboutOurT fira-sans-regular">About Our Trainees</div>
+
+    <div class="QANDC fira-sans-regular">
+      <a href="Key.html">Qualifications and Course</a>
+    </div>
+
+    <div class="SignUp fira-sans-regular">Sign up</div>
+
+    <div class="logo">
+      <img src="images/Webexe_transparent-.png">
+    </div>
+
+    <div class="Title fira-sans-regular">Webexe Homepage</div>
+
+    <div class="AboutUs fira-sans-regular">About us</div>
+
+    <div class="D1"></div>
+    <div class="D2"></div>
+    <div class="littleDes"></div>
+    <div class="D5"></div>
+    <div class="D3"></div>
+    <div class="D4"></div>
+    <div class="D6"></div>
+    <div class="D7"></div>
+    <div class="D8"></div>
+    <div class="D9"></div>
+    <div class="D10"></div>
+    <div class="D11"></div>
+    <div class="D12"></div>
+    <div class="D13"></div>
+  </div>
+
+  <script>
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen()
+          .catch(err => {
+            console.log("Fullscreen error:", err);
+          });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    document.addEventListener("fullscreenchange", function() {
+      const button = document.querySelector(".fullscreen-btn");
+
+      if (document.fullscreenElement) {
+        button.textContent = "Exit Fullscreen";
+      } else {
+        button.textContent = "Go Fullscreen";
+      }
+    });
+  </script>
+
+</body>
